@@ -242,3 +242,6 @@ modules.xml
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/node,webstorm+all,vscode,yarn
+
+
+/src/config/dev.ts

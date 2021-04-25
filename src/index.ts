@@ -1,4 +1,8 @@
-import express from "express"
+import express from 'express'
+import { DB_URI } from './config/dev'
+import { setupDb } from './db'
+
+setupDb(DB_URI).catch(e => {})
 
 const app: express.Express = express()
 app.use(express.json())
@@ -10,6 +14,8 @@ app.listen(port, () => {
   console.log(`Start on port ${port}...`)
 })
 
-app.get('/', (req: express.Request, res: express.Response) => {
-  res.send('Hello World')
+app.get('/products', (req: express.Request, res: express.Response) => {
+  res.json({
+    'success': true
+  })
 })
